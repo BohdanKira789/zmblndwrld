@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mona Lisa - Details</title>
+  <style>
+    body {
+      background-image: url('../cobg.jpg'); /* Update image path if it's in zmblndwrldsite folder */
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #F3E0DA;
+      color: white;
+      text-align: center;
+      padding: 2em 0;
+    }
+
+    nav {
+      background-color: #FFD2D2;
+      padding: 1em 0;
+      text-align: center;
+    }
+
+    nav a {
+      display: inline-block;
+      padding: 0.5em 1em;
+      text-decoration: none;
+      color: #333;
+      margin: 0 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #c082ed;
+      color: white;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .image-container {
+      flex: 1 1 300px;
+      text-align: center;
+    }
+
+    .image-container img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    .details-container {
+      flex: 1 1 300px;
+    }
+
+    .details-container h2 {
+      margin-top: 0;
+    }
+
+    .details-container p {
+      margin-bottom: 15px;
+    }
+
+    .price {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #5c3c92;
+    }
+
+    .add-to-cart-button {
+      background-color: #5c3c92;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 1em;
+      transition: background-color 0.3s ease;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .add-to-cart-button:hover {
+      background-color: #AE6969;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #5c3c92;
+      color: white;
+      text-align: center;
+      padding: 1em 0;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="../lozm.jpg" alt="ZombielandWrld Logo" width="800" height="250" />
+  </header>
+
+  <nav>
+    <a href="../index.html">HOME</a>
+    <a href="../shop.html">SHOP</a>
+    <a href="../about.html">ABOUT</a>
+    <a href="../contactme.html">CONTACT ME</a>
+  </nav>
+
+  <main>
+    <div class="image-container">
+      <img src="lisa.jpg" alt="sirens Painting" />
+    </div>
+    <div class="details-container">
+      <h2>Mona Lisa</h2>
+      <p><strong>Description:</strong> refrence taken from the original one (size might be measured wrong, to know exactly contact me by entering the page "Contact me") </p>
+      <p><strong>Size:</strong> 49.7x40 cm</p>
+      <p class="price">Price: $130</p>
+      <a href="https://www.paypal.com/ncp/payment/NBK5KX7G3SJ4E" class="add-to-cart-button">Buy</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ZOMBIELANDWRLD. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
