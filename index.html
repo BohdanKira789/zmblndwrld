@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZombielandWrld</title>
+    <style>
+        body {
+            background-image: url('cobg.jpg');
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header { 
+            background-color: #F3E0DA; /* green bg */
+            color: white;
+            text-align: center;
+            padding: 2em 0;
+        }
+
+        nav {
+            background-color: #FFD2D2; /* light pink bg */
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        nav a {
+            display: inline-block;
+            padding: 0.5em 1em;
+            text-decoration: none;
+            color: #333;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #c082ed; /* Slightly darker lavender on hover */
+            color: white;
+        }
+
+        main {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        .painting {
+            border: 1px solid #ddd;
+            padding: 10px;
+            background-color: white;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border-radius: 8px;
+            overflow: hidden; /* Prevents image overflow */
+            transition: transform 0.3s ease; /* Smooth hover effect */
+        }
+
+        .painting:hover {
+            transform: scale(1.05);
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer; /* Added pointer cursor for interactivity */
+        }
+
+        .painting img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 5px;
+        }
+
+        .painting h2 {
+            margin-top: 10px;
+        }
+
+        .painting p {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #5c3c92;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            margin-top: 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #5c3c92;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        /* Added new hover effect for button on .painting hover */
+        .painting:hover .cta-button {
+            background-color: #AE6969;
+        }
+
+        /* Styling for video and gif container */
+        .video-container {
+            display: flex;
+            justify-content: center; /* Centers the items horizontally */
+            align-items: center;
+            margin: 20px 0;
+            gap: 50px; /* Increased space between the GIF and the video */
+        }
+
+        .video-text-container {
+            max-width: 50%; /* Keeps text container at 50% width */
+            padding-left: 40px; /* Increased padding for more space near video */
+            padding-right: 40px; /* Added more space on the right side of the video */
+        }
+
+        .side-gif {
+            width: 800px; /* Increased size of the GIF */
+            height: auto;
+            border-radius: 10px;
+            margin-left: 20px; /* Added left margin to book.gif */
+        }
+
+        video {
+            width: 100%; /* Set video width to 100% */
+            height: auto;
+            display: block;
+            margin: 0 auto; /* Centers the video */
+        }
+
+        /* Add frame around swans.gif using PNG */
+        #swans {
+            position: relative;
+            width: 360px; /* Reduced width */
+            height: 500px; /* Reduced height */
+            background-image: url('goldframe.png'); /* Path to your PNG frame */
+            background-size: cover; /* Ensures the frame fits around the image */
+            background-position: center; /* Centers the frame */
+            padding: 15px; /* Padding to ensure the gif image is inside the frame */
+            border-radius: 10px; /* Optional, depending on frame design */
+            overflow: hidden; /* Ensures the image stays inside the frame */
+        }
+
+        #swans img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1; /* Ensure the gif is behind the frame */
+        }
+
+        /* Add frame around gifaes.gif using PNG */
+        #gifaes-frame {
+            position: relative;
+            width: 360px; /* Reduced width */
+            height: 500px; /* Reduced height */
+            background-image: url('goldframe.png'); /* Path to your PNG frame */
+            background-size: cover; /* Ensures the frame fits around the image */
+            background-position: center; /* Centers the frame */
+            padding: 15px; /* Padding to ensure the gif image is inside the frame */
+            border-radius: 10px; /* Optional, depending on frame design */
+            overflow: hidden; /* Ensures the image stays inside the frame */
+        }
+
+        #gifaes-frame img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1; /* Ensure the gif is behind the frame */
+        }
+
+        /* Quote Section Style */
+        .quote-section {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            text-align: center;
+            font-size: 2em;
+            margin-top: 40px;
+            font-style: italic;
+            color: #333;
+            border-radius: 10px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="lozm.jpg" alt="ZombielandWrldlo" width="800" height="250">
+    </header>
+
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="shop.html">SHOP</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contactme.html">CONTACT ME</a>
+    </nav>
+
+    <h1 align="center">NEW ONES!</h1>
+
+    <main>
+        <!-- Add frame around swans.gif -->
+        <div id="swans">
+            <img src="swans.gif" width="350" height="500"> <!-- Adjusted size of the gif -->
+        </div>
+
+        <div class="painting">
+            <h2>SMOKE N SHADOWS</h2>
+            <p>she's silently listening</p>
+            <img src="sns.jpg" alt="Painting 1">
+            <p>Price: $80.99</p>
+            <a href="details/details-smoke.html" class="cta-button">View Details</a>
+        </div>
+
+        <div class="painting">
+            <h2>ASHES IN MOTION</h2>
+            <p>whispering you</p>
+            <img src="hm1.jpg" alt="Painting 2">
+            <p>Price: $87</p>
+            <a href="details/details-ashes.html" class="cta-button">View Details</a>
+        </div>
+
+        <div class="painting">
+            <img src="lost.jpg" alt="Painting 3">
+            <h2>LOST</h2>
+            <p>19,5x26</p>
+            <p>Price: $45</p>
+            <a href="details/details-lost.html" class="cta-button">View Details</a>
+        </div>
+
+        <div class="painting">
+            <img src="nuns.jpg" alt="Painting 4">
+            <h2>Sins from past</h2>
+            <p>Hidden image</p>
+            <p>Price: $135</p>
+            <a href="details/details-sins.html" class="cta-button">View Details</a>
+        </div>
+
+        <div id="gifaes-frame">
+            <img src="gifaes.gif" width="350" height="500">
+    </main>
+
+    <div class="video-container">
+        <img src="book.gif" alt="GIF" class="side-gif"> 
+        <div class="video-text-container">
+            <video controls>
+                <source src="process.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <div class="quote-section">
+        <p>“Art washes away from the soul the dust of everyday life.” – Pablo Picasso</p>
+    </div>
+
+    <footer>
+        <p>© 2025 Art Gallery. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

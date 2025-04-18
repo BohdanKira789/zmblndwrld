@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - ZOMBIELANDWRLD</title>
+  <style>
+    body {
+      background-image: url('cobg.jpg');
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #FFD2D2;
+      color: white;
+      padding: 1em 0;
+      text-align: center;
+    }
+    nav {
+      background-image: url('lozm.jpg');
+      padding: 0.5em 0;
+      text-align: center;
+    }
+    nav a {
+      display: inline-block;
+      padding: 0.5em 1em;
+      text-decoration: none;
+      color: #333;
+    }
+    nav a:hover {
+      background-color: #ddd;
+    }
+    main {
+      padding: 30px;
+      padding-bottom: 120px; /* ✅ Prevents footer overlap */
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .profile-image {
+      float: left;
+      margin-right: 20px;
+      margin-bottom: 20px;
+      max-width: 200px;
+      height: auto;
+      border-radius: 5px;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1em 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>ZOMBIELANDWRLD</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="shop.html">SHOP</a>
+    <a href="about.html">ABOUT</a>
+    <a href="contactme.html">CONTACT</a>
+  </nav>
+
+  <main class="clearfix">
+    <img class="profile-image" src="me1.jpg" style="height: 350px; width: 300px;" alt="Artist Profile Picture" />
+
+    <h2>CONTACT ME</h2>
+    <p>Meet me in my social media!</p>
+
+    <p>TIKTOK:</p>
+    <a href="https://www.tiktok.com/@wenbies?_t=ZN-8tkmkrXBGHX&_r=1">@wenbies</a>
+
+    <p>INSTAGRAM:</p>
+    <a href="https://www.instagram.com/ggirhecc?igsh=dm9zbGRubWJoNGJi&utm_source=qr">@ggirhecc</a>
+
+    <p>Thank you for visiting ZOMBIELANDWRLD. I hope you enjoy exploring my artwork.</p>
+
+    <hr />
+    <h3>Send Me a Message</h3>
+
+    <form action="https://formspree.io/f/xrbpwapv" method="POST">
+      <!-- Redirect to thank-you page -->
+      <input type="hidden" name="_next" value="thankyou.html" />
+
+      <label for="name">Name:</label><br />
+      <input type="text" id="name" name="name" required style="width: 100%; padding: 8px;" /><br /><br />
+
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" name="email" required style="width: 100%; padding: 8px;" /><br /><br />
+
+      <label for="message">Message:</label><br />
+      <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 8px;"></textarea><br /><br />
+
+      <button type="submit" style="background-color: #FFD2D2; border: none; padding: 10px 20px; cursor: pointer;">
+        Send
+      </button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ZOMBIELANDWRLD. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

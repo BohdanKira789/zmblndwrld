@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZombielandWrld - Shop</title>
+    <style>
+        body {
+            background-image: url('cobg.jpg');
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #F3E0DA;
+            color: white;
+            text-align: center;
+            padding: 2em 0;
+        }
+
+        nav {
+            background-color: #FFD2D2;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        nav a {
+            display: inline-block;
+            padding: 0.5em 1em;
+            text-decoration: none;
+            color: #333;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #c082ed;
+            color: white;
+        }
+
+        main {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        .painting {
+            border: 1px solid #ddd;
+            padding: 10px;
+            background-color: white;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .painting:hover {
+            transform: scale(1.05);
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+        .painting img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 5px;
+        }
+
+        .painting h2 {
+            margin-top: 10px;
+        }
+
+        .painting p {
+            margin-bottom: 10px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #5c3c92;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .painting:hover .cta-button {
+            background-color: #AE6969;
+        }
+
+        footer {
+            background-color: #5c3c92;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            margin-top: 20px;
+        }
+
+        /* Full-width academic banner */
+        .academic-full {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .academic-img-full {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="lozm.jpg" alt="ZombielandWrldlo" background-color: #F3E0DA; width="800" height="250">
+    </header>
+
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="shop.html">SHOP</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contactme.html">CONTACT ME</a>
+    </nav>
+
+    <main>
+        <!-- Paintings Grid -->
+        <div class="painting">
+            <h2>SMOKE N SHADOWS</h2>
+            <p>she's silently listening</p>
+            <img src="sns.jpg" alt="Painting SMOKE N SHADOWS">
+            <p>Price: $80.99</p>
+            <a href="details/details-smoke.html" class="cta-button">View Details</a>
+        </div>
+
+        <div class="painting">
+            <h2>ASHES IN MOTION</h2>
+            <p>whispering you</p>
+            <img src="hm1.jpg" alt="Painting ASHES IN MOTION">
+            <p>Price: $87</p>
+            <a href="details/details-ashes.html" class="cta-button">View Details</a>
+        </div>
+
+        <div class="painting">
+            <img src="lost.jpg" alt="Painting LOST">
+            <h2>LOST</h2>
+            <p>Price: $45</p>
+            <a href="details/details-lost.html" class="cta-button">View Details</a>
+        </div>
+
+        <div class="painting">
+            <h2>Mona Lisa</h2>
+            <img src="lisa.jpg" alt="Painting Title">
+            <p>Price: $130</p>
+            <a href="details/details-lisa.html" class="cta-button">View Details</a>
+        </div>
+        <div class="painting">
+            <img src="nuns.jpg" alt="Painting sins from past">
+            <h2>sins from past</h2>
+            <p>hiden image</p>
+            <p>Price: $135</p>
+            <a href="details/details-sins.html" class="cta-button">View Details</a>
+        </div>
+
+        <div class="painting">
+            <h2>Fornarina</h2>
+            <img src="lala.jpg" alt="Painting Title">
+            <p>Price: $63</p>
+            <a href="details/details-lalala.html" class="cta-button">View Details</a>
+        </div>
+
+        <div class="painting">
+            <h2>Sirens</h2>
+            <img src="apro.jpg" alt="Painting Title">
+            <p>Price: SOLD </p>
+            <a href="details/details-sirens.html" class="cta-button">View Details</a>
+        </div>
+
+        <div class="painting">
+            <h2>gray day</h2>
+            <img src="gray.jpg" alt="Painting Title">
+            <p>Price: $123</p>
+            <a href="details/details-gray.html" class="cta-button">View Details</a>
+        </div>
+
+        <div class="painting">
+            <h2>man and the sea</h2>
+            <img src="mas.jpg" alt="Painting Title">
+            <p>Price: $66</p>
+            <a href="details/details-mas.html" class="cta-button">View Details</a>
+        </div>
+
+        <div class="painting">
+            <h2>Paris</h2>
+            <p>A dream</p>
+            <img src="paris.jpg" alt="Painting Title">
+            <p>Price: $55</p>
+            <a href="details/details-paris.html" class="cta-button">View Details</a>
+        </div>
+
+        <div class="painting">
+            <h2>Marilyn Monroe</h2>
+            <p>poor</p>
+            <img src="marilyn.jpg" alt="Painting Title">
+            <p>Price: $109</p>
+            <a href="details/details-monroe.html" class="cta-button">View Details</a>
+        </div>
+
+        <div class="painting">
+            <h2>Fontana di Trevi</h2>
+            <img src="rome.jpg" alt="Painting Title">
+            <p>Price: $42</p>
+            <a href="details/details-trevi.html" class="cta-button">View Details</a>
+        </div>
+
+        <div class="painting">
+            <h2>The bell</h2>
+            <img src="snow.jpg" alt="Painting Title">
+            <p>Price: $38</p>
+            <a href="details/details-snow.html" class="cta-button">View Details</a>
+        </div>
+
+        <div class="painting">
+            <h2>Meleene</h2>
+            <img src="girl.jpg" alt="Painting Title">
+            <p>Price: - </p>
+            <a href="details/details-girl.html" class="cta-button">View Details</a>
+        </div>
+
+    </main>
+
+    <!-- Full Width Academic Works Banner (separating section) -->
+    <div class="academic-full">
+        <img src="academic-banner.png" alt="Academic Works" class="academic-img-full">
+    </div>
+
+    <!-- Start of Academic Paintings (WITH side indents) -->
+    <main>
+        <div class="painting">
+            <img src="1.jpg" alt="Painting Title">
+        </div>
+        <div class="painting">
+            <img src="2.jpg" alt="Painting Title">
+        </div>
+        <div class="painting">
+            <img src="3.jpg" alt="Painting Title">
+        </div>
+        <div class="painting">
+            <img src="4.jpg" alt="Painting Title">
+        </div>
+        <div class="painting">
+            <img src="5.jpg" alt="Painting Title">
+        </div>
+        <div class="painting">
+            <img src="6.jpg" alt="Painting Title">
+        </div>
+        <div class="painting">
+            <img src="7.jpg" alt="Painting Title">
+        </div>
+        <div class="painting">
+            <img src="8.jpg" alt="Painting Title">
+        </div>
+        <div class="painting">
+            <img src="9.jpg" alt="Painting Title">
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Art Gallery. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
