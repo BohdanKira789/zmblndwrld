@@ -1,272 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZombielandWrld</title>
-    <style>
-        body {
-            background-image: url('cobg.jpg');
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ZombielandWrld</title>
+  <style>
+    body {
+      background-image: url('cobg.jpg');
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
 
-        header {
-            background-color: #F3E0DA;
-            color: white;
-            text-align: center;
-            padding: 2em 0;
-        }
+    header { 
+      background-color: #F3E0DA;
+      color: white;
+      text-align: center;
+      padding: 2em 0;
+    }
 
-        nav {
-            background-color: #FFD2D2;
-            padding: 1em 0;
-            text-align: center;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 999;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
+    nav {
+      background-color: #FFD2D2;
+      padding: 1em 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-        nav a {
-            display: inline-block;
-            padding: 0.5em 1em;
-            text-decoration: none;
-            color: #333;
-            margin: 0 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
+    nav a {
+      display: inline-block;
+      padding: 0.5em 1em;
+      text-decoration: none;
+      color: #333;
+      margin: 0 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
 
-        nav a:hover {
-            background-color: #c082ed;
-            color: white;
-        }
+    nav a:hover {
+      background-color: #c082ed;
+      color: white;
+    }
 
-        main {
-            padding: 140px 20px 20px 20px; /* Top padding adjusted to avoid overlap */
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            grid-gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+    .intro-section {
+      width: 100vw;
+      overflow: hidden;
+      background: black;
+      position: relative;
+    }
 
-        .painting {
-            border: 1px solid #ddd;
-            padding: 10px;
-            background-color: white;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
+    .intro-section video {
+      width: 100vw;
+      height: auto;
+      display: block;
+    }
 
-        .painting:hover {
-            transform: scale(1.05);
-            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-        }
+    .new-ones-text {
+  position: absolute;
+  top: 30px;
+  right: 10%;
+  text-align: right;
+  font-size: 3em;
+  font-weight: bold;
+  color: white;
+  z-index: 10;
+    }
 
-        .painting img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-            border-radius: 5px;
-        }
+    main {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-gap: 20px;
+      max-width: 1200px;
+      margin: 20px auto;
+    }
 
-        .painting h2 {
-            margin-top: 10px;
-        }
+    .painting {
+      border: 1px solid #ddd;
+      padding: 10px;
+      background-color: white;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
 
-        .painting p {
-            margin-bottom: 10px;
-        }
+    .painting:hover {
+      transform: scale(1.05);
+      box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
 
-        footer {
-            background-color: #5c3c92;
-            color: white;
-            text-align: center;
-            padding: 1em 0;
-            margin-top: 20px;
-        }
+    .painting img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 5px;
+    }
 
-        .cta-button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #5c3c92;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-            margin-top: 10px;
-        }
+    .painting h2 {
+      margin-top: 10px;
+    }
 
-        .painting:hover .cta-button {
-            background-color: #AE6969;
-        }
+    .painting p {
+      margin-bottom: 10px;
+    }
 
-        .video-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 20px 0;
-            gap: 50px;
-        }
+    footer {
+      background-color: #5c3c92;
+      color: white;
+      text-align: center;
+      padding: 1em 0;
+      margin-top: 20px;
+    }
 
-        .video-text-container {
-            max-width: 50%;
-            padding-left: 40px;
-            padding-right: 40px;
-        }
+    .cta-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #5c3c92;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      margin-top: 10px;
+    }
 
-        .side-gif {
-            width: 800px;
-            height: auto;
-            border-radius: 10px;
-            margin-left: 20px;
-        }
+    .painting:hover .cta-button {
+      background-color: #AE6969;
+    }
 
-        video {
-            width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px 0;
+      gap: 50px;
+    }
 
-        #swans {
-            position: relative;
-            width: 360px;
-            height: 500px;
-            background-image: url('goldframe.png');
-            background-size: cover;
-            background-position: center;
-            padding: 15px;
-            border-radius: 10px;
-            overflow: hidden;
-        }
+    .video-text-container {
+      max-width: 50%;
+      padding-left: 40px;
+      padding-right: 40px;
+    }
 
-        #swans img {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: -1;
-        }
+    .side-gif {
+      width: 800px;
+      height: auto;
+      border-radius: 10px;
+      margin-left: 20px;
+    }
 
-        #gifaes-frame {
-            position: relative;
-            width: 360px;
-            height: 500px;
-            background-image: url('goldframe.png');
-            background-size: cover;
-            background-position: center;
-            padding: 15px;
-            border-radius: 10px;
-            overflow: hidden;
-        }
+    video {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
 
-        #gifaes-frame img {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: -1;
-        }
+    #swans {
+      position: relative;
+      width: 360px;
+      height: 500px;
+      background-image: url('goldframe.png');
+      background-size: cover;
+      background-position: center;
+      padding: 15px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
 
-        .quote-section {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 30px;
-            text-align: center;
-            font-size: 2em;
-            margin-top: 40px;
-            font-style: italic;
-            color: #333;
-            border-radius: 10px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-    </style>
+    #swans img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+
+    #gifaes-frame {
+      position: relative;
+      width: 360px;
+      height: 500px;
+      background-image: url('goldframe.png');
+      background-size: cover;
+      background-position: center;
+      padding: 15px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    #gifaes-frame img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+
+    .quote-section {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 30px;
+      text-align: center;
+      font-size: 2em;
+      margin-top: 40px;
+      font-style: italic;
+      color: #333;
+      border-radius: 10px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <img src="lozm.jpg" alt="ZombielandWrldlo" width="800" height="250">
-    </header>
+  <header>
+    <img src="lozm.jpg" alt="ZombielandWrldlo" width="800" height="250">
+  </header>
 
-    <nav>
-        <a href="index.html">HOME</a>
-        <a href="shop.html">SHOP</a>
-        <a href="about.html">ABOUT</a>
-        <a href="contactme.html">CONTACT ME</a>
-    </nav>
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="shop.html">SHOP</a>
+    <a href="about.html">ABOUT</a>
+    <a href="contactme.html">CONTACT ME</a>
+  </nav>
 
-    <h1 align="center">NEW ONES!</h1>
+  <div class="intro-section">
+    <video autoplay muted loop playsinline>
+      <source src="venera.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <h1 class="new-ones-text">NEW ONES!</h1>
+  </div>
 
-    <main>
-        <div id="swans">
-            <img src="swans.gif" width="350" height="500">
-        </div>
-
-        <div class="painting">
-            <h2>SMOKE N SHADOWS</h2>
-            <p>she's silently listening</p>
-            <img src="sns.jpg" alt="Painting 1">
-            <p>Price: $80.99</p>
-            <a href="details/details-smoke.html" class="cta-button">View Details</a>
-        </div>
-
-        <div class="painting">
-            <h2>ASHES IN MOTION</h2>
-            <p>whispering you</p>
-            <img src="hm1.jpg" alt="Painting 2">
-            <p>Price: $87</p>
-            <a href="details/details-ashes.html" class="cta-button">View Details</a>
-        </div>
-
-        <div class="painting">
-            <img src="lost.jpg" alt="Painting 3">
-            <h2>LOST</h2>
-            <p>19,5x26</p>
-            <p>Price: $45</p>
-            <a href="details/details-lost.html" class="cta-button">View Details</a>
-        </div>
-
-        <div class="painting">
-            <img src="nuns.jpg" alt="Painting 4">
-            <h2>Sins from past</h2>
-            <p>Hidden image</p>
-            <p>Price: $135</p>
-            <a href="details/details-sins.html" class="cta-button">View Details</a>
-        </div>
-
-        <div id="gifaes-frame">
-            <img src="gifaes.gif" width="350" height="500">
-        </div>
-    </main>
-
-    <div class="video-container">
-        <img src="book.gif" alt="GIF" class="side-gif">
-        <div class="video-text-container">
-            <video controls>
-                <source src="process.mp4" type="video/mp4">
-            </video>
-        </div>
+  <main>
+    <div id="swans">
+      <img src="swans.gif" width="350" height="500">
     </div>
 
-    <div class="quote-section">
-        <p>“Art washes away from the soul the dust of everyday life.” – Pablo Picasso</p>
+    <div class="painting">
+      <h2>SMOKE N SHADOWS</h2>
+      <p>she's silently listening</p>
+      <img src="sns.jpg" alt="Painting 1">
+      <p>Price: $80.99</p>
+      <a href="details/details-smoke.html" class="cta-button">View Details</a>
     </div>
 
-    <footer>
-        <p>© 2025 Art Gallery. All rights reserved.</p>
-    </footer>
+    <div class="painting">
+      <h2>ASHES IN MOTION</h2>
+      <p>whispering you</p>
+      <img src="hm1.jpg" alt="Painting 2">
+      <p>Price: $87</p>
+      <a href="details/details-ashes.html" class="cta-button">View Details</a>
+    </div>
+
+    <div class="painting">
+      <img src="lost.jpg" alt="Painting 3">
+      <h2>LOST</h2>
+      <p>19,5x26</p>
+      <p>Price: $45</p>
+      <a href="details/details-lost.html" class="cta-button">View Details</a>
+    </div>
+
+    <div class="painting">
+      <img src="nuns.jpg" alt="Painting 4">
+      <h2>Sins from past</h2>
+      <p>Hidden image</p>
+      <p>Price: $135</p>
+      <a href="details/details-sins.html" class="cta-button">View Details</a>
+    </div>
+
+    <div id="gifaes-frame">
+      <img src="gifaes.gif" width="350" height="500">
+    </div>
+  </main>
+
+  <div class="video-container">
+    <img src="book.gif" alt="GIF" class="side-gif"> 
+    <div class="video-text-container">
+      <video controls>
+        <source src="process.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+  <div class="quote-section">
+    <p>“Art washes away from the soul the dust of everyday life.” – Pablo Picasso</p>
+  </div>
+
+  <footer>
+    <p>© 2025 Art Gallery. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
