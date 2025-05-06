@@ -121,7 +121,7 @@
     .cta-button {
       display: inline-block;
       padding: 10px 20px;
-      background-color: #5c3c92;
+      background-color: #EC7FA9;
       color: white;
       text-decoration: none;
       border-radius: 5px;
@@ -130,7 +130,7 @@
     }
 
     .painting:hover .cta-button {
-      background-color: #AE6969;
+      background-color: #FFC1DA;
     }
 
     .video-container {
@@ -233,6 +233,7 @@
     .fade-in.visible {
       opacity: 1;
       transform: translateY(0);
+    }
   </style>
 </head>
 <body>
@@ -314,6 +315,26 @@
   <footer>
     <p>© 2025 Art Gallery. All rights reserved.</p>
   </footer>
+  <script>
+    // Scroll-triggered fade-in effect
+    const faders = document.querySelectorAll('.fade-in');
 
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+   </script>
 </body>
 </html>
